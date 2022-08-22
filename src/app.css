@@ -20,6 +20,10 @@
   }
 
   #app-container {
-    @apply isolate bg-white text-neutral-400 p-6 sm:p-8;
+    @apply isolate bg-white text-neutral-400 py-6 sm:py-8;
+  }
+
+  .section {
+    @apply px-6 sm:px-8;
   }
 }
