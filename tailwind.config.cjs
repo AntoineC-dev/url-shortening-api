@@ -8,6 +8,9 @@ module.exports = {
       xs: "480px",
       ...defaultTheme.screens,
     },
+    container: {
+      center: true,
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
