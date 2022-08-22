@@ -11,6 +11,8 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
+      white: "hsl(0, 0%, 100%)",
+      black: "hsl(0, 0%, 0%)",
       primary: "hsl(180, 66%, 49%)",
       secondary: "hsl(257, 27%, 26%)",
       error: "hsl(0, 87%, 67%)",
