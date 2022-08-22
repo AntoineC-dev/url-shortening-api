@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply h-full min-h-screen antialiased;
+  }
+
+  html,
+  body,
+  #app-container {
+    @apply flex flex-col;
+  }
+
+  body,
+  #app-container {
+    @apply grow;
+  }
+
+  #app-container {
+    @apply isolate;
+  }
+}
