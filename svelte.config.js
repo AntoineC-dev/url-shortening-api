@@ -11,6 +11,10 @@ const config = {
 
   kit: {
     adapter: adapter(),
+    alias: {
+      $types: "src/types.ts",
+      $assets: "src/assets",
+    },
   },
 };
 
