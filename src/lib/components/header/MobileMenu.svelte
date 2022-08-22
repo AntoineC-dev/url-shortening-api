@@ -26,7 +26,7 @@
 <nav
   use:trapFocus={{ shouldTrap: open, toggleElement: hamburger, closeCallback: toggle }}
   aria-label="Primary"
-  class="sm:hidden"
+  class="md:hidden ml-auto"
 >
   <button
     bind:this={hamburger}
