@@ -10,6 +10,9 @@ module.exports = {
     },
     container: {
       center: true,
+      screens: {
+        DEFAULT: "1480px",
+      },
     },
     colors: {
       transparent: "transparent",
