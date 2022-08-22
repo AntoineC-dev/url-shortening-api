@@ -1,5 +1,6 @@
 import adapter from "@sveltejs/adapter-auto";
 import preprocess from "svelte-preprocess";
+import svelteSVG from "vite-plugin-svelte-svg";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,6 +11,14 @@ const config = {
   }),
 
   kit: {
+    vite: {
+      plugins: [
+        svelteSVG({
+          svgoConfig: {},
+          requireSuffix: false,
+        }),
+      ],
+    },
     adapter: adapter(),
   },
 };
