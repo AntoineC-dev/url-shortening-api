@@ -20,6 +20,6 @@
   }
 
   #app-container {
-    @apply isolate;
+    @apply isolate text-neutral-400;
   }
 }
