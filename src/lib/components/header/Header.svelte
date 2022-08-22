@@ -5,7 +5,7 @@
 </script>
 
 <header class="container relative flex items-center">
-  <a href="/" aria-label="Homepage">
+  <a href="/" aria-label="Homepage" class="hover:opacity-70 transition-opacity duration-300">
     <Logo class="h-8 fill-neutral-400" />
   </a>
   <MobileMenu />
