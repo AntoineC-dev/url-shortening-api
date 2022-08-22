@@ -13,7 +13,6 @@ const config = {
     adapter: adapter(),
     alias: {
       $types: "src/types.ts",
-      $assets: "src/assets",
     },
   },
 };
