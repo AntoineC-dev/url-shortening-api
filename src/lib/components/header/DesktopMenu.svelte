@@ -1,5 +1,7 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import { menuItems } from "$lib/json";
+  import Button from "$lib/shared/Button.svelte";
 </script>
 
 <nav aria-label="Primary" class="hidden md:flex flex-1 justify-between ml-12">
@@ -11,12 +13,13 @@
       <a href="/" class="rounded-3xl p-2 hover:text-neutral-300 transition-colors duration-300">Login</a>
     </li>
     <li>
-      <a
+      <Button onClick={() => goto("/")} size="dense">Sign Up</Button>
+      <!-- <a
         href="/"
-        class="block rounded-3xl px-6 py-3 text-white bg-primary hover:opacity-70 transition-opacity duration-300"
+        class="block leading-none rounded-3xl px-6 py-4 text-white bg-primary hover:opacity-70 transition-opacity duration-300"
       >
         Sign Up
-      </a>
+      </a> -->
     </li>
   </ul>
 </nav>

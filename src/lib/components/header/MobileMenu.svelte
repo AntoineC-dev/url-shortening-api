@@ -2,6 +2,7 @@
   import { goto } from "$app/navigation";
   import { menuItems } from "$lib/json";
   import { trapFocus } from "$lib/utils";
+  import Button from "$lib/shared/Button.svelte";
 
   let open = false;
   const toggle = () => (open = !open);
@@ -49,28 +50,15 @@
     <ul class="flex flex-col gap-2 pb-6">
       {#each menuItems as { href, label } (label)}
         <li>
-          <button
-            on:click={() => onNavigate(href)}
-            aria-label="Navigate to {label} page"
-            disabled={!open}
-            class="w-full leading-none font-bold text-lg text-center h-12">{label}</button
-          >
+          <Button onClick={() => onNavigate(href)} disabled={!open} type="secondary" class="w-full">
+            {label}
+          </Button>
         </li>
       {/each}
     </ul>
     <div class="flex flex-col gap-4 pt-6 pb-4">
-      <button
-        on:click={() => onNavigate("/")}
-        aria-label="Navigate to login page"
-        disabled={!open}
-        class="leading-none h-12 rounded-3xl font-bold text-lg">Login</button
-      >
-      <button
-        on:click={() => onNavigate("/")}
-        aria-label="Navigate to sign up page"
-        disabled={!open}
-        class="leading-none h-12 rounded-3xl font-bold text-lg bg-primary">Sign Up</button
-      >
+      <Button onClick={() => onNavigate("/")} disabled={!open} type="secondary">Login</Button>
+      <Button onClick={() => onNavigate("/")} disabled={!open}>Sign Up</Button>
     </div>
   </div>
 </nav>
