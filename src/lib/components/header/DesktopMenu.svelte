@@ -9,7 +9,7 @@
     {#each menuItems as { href, label } (label)}
       <li><a {href} class="p-2 hover:text-neutral-300 transition-colors duration-300">{label}</a></li>
     {/each}
-    <li class="ml-auto">
+    <li class="ml-auto lg:mr-4">
       <a href="/" class="rounded-3xl p-2 hover:text-neutral-300 transition-colors duration-300">Login</a>
     </li>
     <li>
