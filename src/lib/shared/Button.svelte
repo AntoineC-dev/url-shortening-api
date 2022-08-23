@@ -21,7 +21,7 @@
   on:click={onClick}
   aria-label={ariaLabel}
   {disabled}
-  class="leading-none font-bold text-white hover:enabled:opacity-70 transition-opacity duration-300 {props}"
+  class="leading-none font-bold text-white hover:enabled:opacity-70 disabled:cursor-not-allowed transition-opacity duration-300 {props}"
 >
   <slot />
 </button>
