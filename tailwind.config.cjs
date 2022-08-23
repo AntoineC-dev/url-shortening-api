@@ -23,6 +23,7 @@ module.exports = {
       secondary: "hsl(257, 27%, 26%)",
       error: "hsl(0, 87%, 67%)",
       neutral: {
+        DEFAULT: "hsl(225,33%,95%)",
         100: "hsl(0, 0%, 75%)",
         200: "hsl(257, 7%, 63%)",
         300: "hsl(255, 11%, 22%)",
