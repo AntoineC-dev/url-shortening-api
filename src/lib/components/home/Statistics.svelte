@@ -1,13 +1,24 @@
 <script lang="ts">
+  import { statistics } from "$lib/json";
   import Links from "./Links.svelte";
+  import StatisticCard from "./StatisticCard.svelte";
 </script>
 
-<section class="section pb-6 sm:pb-16 md:pb-20 lg:pb-24 bg-neutral">
-  <div class="container">
+<section class="section mt-36 sm:mt-16 md:mt-8 bg-neutral">
+  <div class="container flex flex-col gap-16 md:gap-24 -translate-y-20 sm:-translate-y-14 lg:-translate-y-16">
     <Links />
-    <h2 class="text-2xl font-bold text-center mb-6">Advanced Statistics</h2>
-    <p class="text-neutral-200 text-center">
-      Track how your links are performing across the web with our advanced statistics dashboard.
-    </p>
+    <div class="max-w-max mx-auto">
+      <h2 class="text-2xl xs:text-3xl md:text-4xl xl:text-5xl font-bold text-center mb-6">Advanced Statistics</h2>
+      <p class="text-neutral-200 text-center max-w-[45ch]">
+        Track how your links are performing across the web with our advanced statistics dashboard.
+      </p>
+    </div>
+    <div
+      class="container-xl flex flex-col items-center lg:justify-between lg:flex-row gap-20 lg:gap-8 xl:gap-12 mt-6 statistics-line lg:h-80"
+    >
+      {#each statistics as { content, src, title }, index (title)}
+        <StatisticCard {content} {src} {title} {index} />
+      {/each}
+    </div>
   </div>
 </section>

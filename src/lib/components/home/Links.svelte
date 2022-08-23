@@ -30,8 +30,8 @@
   };
 </script>
 
-<div class="flex flex-col bg-secondary p-6 gap-4 rounded-lg">
-  <div class="flex flex-col gap-1">
+<div class="flex flex-col bg-secondary p-6 sm:p-8 md:px-10 lg:py-10 lg:px-12 gap-4 rounded-lg sm:flex-row shadow-sm">
+  <div class="flex flex-col gap-1 sm:flex-1">
     <input
       type="text"
       bind:this={input}
