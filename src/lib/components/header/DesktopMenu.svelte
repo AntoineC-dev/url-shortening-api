@@ -14,12 +14,6 @@
     </li>
     <li>
       <Button onClick={() => goto("/")} size="dense">Sign Up</Button>
-      <!-- <a
-        href="/"
-        class="block leading-none rounded-3xl px-6 py-4 text-white bg-primary hover:opacity-70 transition-opacity duration-300"
-      >
-        Sign Up
-      </a> -->
     </li>
   </ul>
 </nav>
