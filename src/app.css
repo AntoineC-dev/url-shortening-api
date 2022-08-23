@@ -27,7 +27,17 @@
     @apply px-6 sm:px-10 lg:px-14;
   }
 
+  .container-xl {
+    @apply max-w-screen-xl mx-auto;
+  }
+
   input[data-invalid="true"] {
     @apply outline outline-error;
+  }
+}
+
+@layer components {
+  .statistics-line {
+    @apply relative before:bg-primary before:block before:absolute before:top-0 lg:before:top-1/2 before:left-1/2 lg:before:left-0 before:h-full lg:before:h-[6px] before:-translate-x-1/2 lg:before:translate-x-0 lg:before:-translate-y-1/2  before:w-[6px] lg:before:w-full;
   }
 }
