@@ -4,7 +4,7 @@
   import Button from "$lib/shared/Button.svelte";
 </script>
 
-<section class="section mt-6 sm:mt-16 md:mt-20">
+<section class="section py-6 sm:py-16 md:py-20 lg:py-24">
   <div class="container flex flex-col md:flex-row items-center gap-12 md:justify-between">
     <div class="w-[min(100%,48rem)] md:order-1 md:basis-[45%]">
       <HeroSVG class="w-[min(150%,48rem)]" />
