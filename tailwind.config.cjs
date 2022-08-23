@@ -11,7 +11,7 @@ module.exports = {
     container: {
       center: true,
       screens: {
-        DEFAULT: "1480px",
+        DEFAULT: "1440px",
       },
     },
     colors: {
@@ -36,6 +36,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        h1: ["clamp(2.88rem, calc(-0.23rem + 6.48vw), 6.00rem)", 1.15],
       },
     },
   },
