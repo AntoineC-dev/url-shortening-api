@@ -20,10 +20,10 @@
   }
 
   #app-container {
-    @apply isolate bg-white text-neutral-400 py-6 sm:py-8;
+    @apply isolate bg-white text-neutral-400 py-6 sm:py-8 lg:py-12 overflow-x-hidden;
   }
 
   .section {
-    @apply px-6 sm:px-8;
+    @apply px-6 sm:px-8 lg:px-12;
   }
 }
