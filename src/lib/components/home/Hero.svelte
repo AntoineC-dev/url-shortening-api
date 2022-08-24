@@ -1,6 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import HeroSVG from "$lib/assets/hero.svg";
+  import HeroSVG from "$lib/assets/images/hero.svg";
   import Button from "$lib/shared/Button.svelte";
 </script>
 

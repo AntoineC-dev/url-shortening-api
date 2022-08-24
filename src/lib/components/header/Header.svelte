@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Logo from "$lib/assets/logo.svg";
+  import Logo from "$lib/assets/icons/logo.svg";
   import DesktopMenu from "./DesktopMenu.svelte";
   import MobileMenu from "./MobileMenu.svelte";
 </script>
