@@ -10,7 +10,7 @@
       <HeroSVG class="w-[min(150%,48rem)]" />
     </div>
     <div class="flex flex-col items-center md:items-start text-center md:text-start gap-6 md:basis-1/2">
-      <h1 class="max-w-[15ch] text-4xl xs:text-5xl md:text-h1 font-bold">More than just shorter links</h1>
+      <h1 class="h1 max-w-[15ch]">More than just shorter links</h1>
       <p class="text-neutral-200 max-w-[40ch] xs:text-lg">
         Build your brand’s recognition and get detailed insights on how your links are performing.
       </p>

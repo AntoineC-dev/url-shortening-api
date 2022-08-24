@@ -31,6 +31,14 @@
     @apply max-w-screen-xl mx-auto;
   }
 
+  .h1 {
+    @apply text-4xl xs:text-5xl md:text-clamp-h1 font-bold;
+  }
+
+  .h2 {
+    @apply text-2xl xs:text-3xl md:text-clamp-h2 font-bold;
+  }
+
   input[data-invalid="true"] {
     @apply outline outline-error;
   }

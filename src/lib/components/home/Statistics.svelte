@@ -8,7 +8,7 @@
   <div class="container flex flex-col gap-16 md:gap-24 -translate-y-20 sm:-translate-y-14 lg:-translate-y-16">
     <Links />
     <div class="max-w-max mx-auto">
-      <h2 class="text-2xl xs:text-3xl md:text-h2 font-bold text-center mb-6">Advanced Statistics</h2>
+      <h2 class="h2 text-center mb-6">Advanced Statistics</h2>
       <p class="text-neutral-200 text-center max-w-[45ch]">
         Track how your links are performing across the web with our advanced statistics dashboard.
       </p>

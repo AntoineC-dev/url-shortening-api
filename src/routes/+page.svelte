@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Boost from "$lib/components/home/Boost.svelte";
   import Hero from "$lib/components/home/Hero.svelte";
   import Statistics from "$lib/components/home/Statistics.svelte";
 </script>
@@ -10,4 +11,5 @@
 <main>
   <Hero />
   <Statistics />
+  <Boost />
 </main>

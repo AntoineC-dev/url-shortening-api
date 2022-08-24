@@ -39,8 +39,8 @@ module.exports = {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        h1: ["clamp(2.75rem, calc(-0.48rem + 6.74vw), 6.00rem)", 1.15],
-        h2: ["clamp(2.25rem, calc(1.13rem + 2.34vw), 3.00rem)", 1.05],
+        "clamp-h1": ["clamp(2.75rem, calc(-0.48rem + 6.74vw), 6.00rem)", 1.15],
+        "clamp-h2": ["clamp(2.25rem, calc(1.13rem + 2.34vw), 3.00rem)", 1.05],
       },
     },
   },
