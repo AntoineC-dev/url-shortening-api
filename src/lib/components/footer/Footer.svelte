@@ -17,9 +17,11 @@
 
 <footer class="section bg-neutral-400 py-20">
   <div class="container flex flex-col xl:flex-row items-center xl:items-start gap-12 sm:gap-16 xl:gap-24">
-    <a href="/" aria-label="Go to homepage" class="lg:flex-1">
-      <Logo class="fill-white h-8" />
-    </a>
+    <div class="lg:flex-1">
+      <a href="/" aria-label="Homepage">
+        <Logo class="fill-white h-8" />
+      </a>
+    </div>
     <nav
       aria-label="Footer"
       class="flex flex-col gap-8 sm:grid sm:grid-cols-3 sm:gap-12 md:gap-16 sm:justify-items-center"
