@@ -5,7 +5,9 @@
 </script>
 
 <section class="section mt-36 sm:mt-16 md:mt-8 bg-neutral">
-  <div class="container flex flex-col gap-16 md:gap-24 -translate-y-20 sm:-translate-y-14 lg:-translate-y-16">
+  <div
+    class="container flex flex-col gap-16 md:gap-24 -translate-y-20 sm:-translate-y-14 sm:pb-10 lg:-translate-y-16 lg:pb-8"
+  >
     <Links />
     <div class="max-w-max mx-auto">
       <h2 class="h2 text-center mb-6">Advanced Statistics</h2>
