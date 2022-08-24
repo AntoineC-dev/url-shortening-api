@@ -48,4 +48,12 @@
   .statistics-line {
     @apply relative before:bg-primary before:block before:absolute before:top-0 lg:before:top-1/2 before:left-1/2 lg:before:left-0 before:h-full lg:before:h-[6px] before:-translate-x-1/2 lg:before:translate-x-0 lg:before:-translate-y-1/2  before:w-[6px] lg:before:w-full;
   }
+
+  .bg-shorten {
+    @apply bg-[url('/images/bg-shorten-mobile.svg')] sm:bg-[url('/images/bg-shorten-desktop.svg')] bg-no-repeat bg-right-top sm:bg-cover;
+  }
+
+  .bg-boost {
+    @apply bg-[url('/images/bg-boost-mobile.svg')] sm:bg-[url('/images/bg-boost-desktop.svg')] bg-no-repeat bg-cover;
+  }
 }
