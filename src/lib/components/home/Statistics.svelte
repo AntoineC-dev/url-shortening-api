@@ -6,7 +6,7 @@
 
 <section class="section mt-36 sm:mt-16 md:mt-8 bg-neutral">
   <div
-    class="container flex flex-col gap-16 md:gap-24 -translate-y-20 sm:-translate-y-14 sm:pb-10 lg:-translate-y-16 lg:pb-8"
+    class="container flex flex-col gap-16 md:gap-24 -translate-y-20 sm:-translate-y-14 sm:pb-12 lg:-translate-y-16 lg:pb-16"
   >
     <Links />
     <div class="max-w-max mx-auto">
@@ -16,7 +16,7 @@
       </p>
     </div>
     <div
-      class="container-xl flex flex-col items-center lg:justify-between lg:flex-row gap-20 lg:gap-8 xl:gap-12 mt-6 statistics-line lg:h-80"
+      class="container-xl flex flex-col items-center lg:justify-between lg:flex-row gap-20 lg:gap-8 xl:gap-12 mt-6 statistics-line lg:h-96"
     >
       {#each statistics as { content, src, title }, index (title)}
         <StatisticCard {content} {src} {title} {index} />
