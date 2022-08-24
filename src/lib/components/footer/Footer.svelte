@@ -18,8 +18,8 @@
 <footer class="section bg-neutral-400 py-20">
   <div class="container flex flex-col xl:flex-row items-center xl:items-start gap-12 sm:gap-16 xl:gap-24">
     <div class="lg:flex-1">
-      <a href="/" aria-label="Homepage">
-        <Logo class="fill-white h-8" />
+      <a href="/" aria-label="Homepage" class="group">
+        <Logo class="fill-white group-hover:fill-primary h-8 transition-colors duration-300" />
       </a>
     </div>
     <nav
