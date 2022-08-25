@@ -1,6 +1,6 @@
 <script lang="ts">
   import { later } from "$lib/helpers";
-  import Button from "$lib/shared/Button.svelte";
+  import { Button } from "$lib/shared";
 
   let input: HTMLInputElement;
   let value = "";
