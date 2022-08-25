@@ -1,30 +1,24 @@
 <script lang="ts">
   import { menuItems } from "$lib/json";
   import { Button, ButtonText } from "$lib/shared";
-  import { auth, setLoading } from "$lib/stores";
+  import { auth } from "$lib/stores";
   import { loginWithGithub, logout } from "$lib/utils";
 
   const handleLogin = async () => {
     try {
-      setLoading(true);
       const { error } = await loginWithGithub();
       if (error) alert(error.message);
     } catch (error: any) {
       alert(error.error_description || error.message);
-    } finally {
-      setLoading(false);
     }
   };
 
   const handleLogout = async () => {
     try {
-      setLoading(true);
       const { error } = await logout();
       if (error) alert(error.message);
     } catch (error: any) {
       alert(error.error_description || error.message);
-    } finally {
-      setLoading(false);
     }
   };
 </script>
