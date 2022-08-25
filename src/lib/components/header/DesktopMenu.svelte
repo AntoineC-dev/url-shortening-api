@@ -1,7 +1,32 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
   import { menuItems } from "$lib/json";
-  import Button from "$lib/shared/Button.svelte";
+  import { Button, ButtonText } from "$lib/shared";
+  import { auth, setLoading } from "$lib/stores";
+  import { loginWithGithub, logout } from "$lib/utils";
+
+  const handleLogin = async () => {
+    try {
+      setLoading(true);
+      const { error } = await loginWithGithub();
+      if (error) alert(error.message);
+    } catch (error: any) {
+      alert(error.error_description || error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      setLoading(true);
+      const { error } = await logout();
+      if (error) alert(error.message);
+    } catch (error: any) {
+      alert(error.error_description || error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 </script>
 
 <nav aria-label="Primary" class="hidden md:flex flex-1 justify-between ml-12">
@@ -9,11 +34,17 @@
     {#each menuItems as { href, label } (label)}
       <li><a {href} class="p-2 hover:text-neutral-300 transition-colors duration-300">{label}</a></li>
     {/each}
-    <li class="ml-auto lg:mr-4">
-      <a href="/" class="rounded-3xl p-2 hover:text-neutral-300 transition-colors duration-300">Login</a>
-    </li>
-    <li>
-      <Button onClick={() => goto("/")} size="dense">Sign Up</Button>
-    </li>
+    {#if $auth.status === "SIGNED_IN"}
+      <li class="ml-auto">
+        <ButtonText onClick={handleLogout} size="dense">Logout</ButtonText>
+      </li>
+    {:else}
+      <li class="ml-auto">
+        <ButtonText onClick={handleLogin} size="dense">Login</ButtonText>
+      </li>
+      <li>
+        <Button onClick={handleLogin} size="dense">Sign Up</Button>
+      </li>
+    {/if}
   </ul>
 </nav>
