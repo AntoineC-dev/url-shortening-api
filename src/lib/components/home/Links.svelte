@@ -1,9 +1,16 @@
 <script lang="ts">
+  import { later } from "$lib/helpers";
   import Button from "$lib/shared/Button.svelte";
 
   let input: HTMLInputElement;
   let value = "";
   let state: "idle" | "active" | "submitting" | Error = "idle";
+
+  const resetForm = () => {
+    state = "idle";
+    value = "";
+  };
+
   const validateUrl = (value: string, force?: "force") => {
     if ((state === "idle" && !force) || state === "submitting") return;
     if (state !== "active") state = "active";
@@ -13,9 +20,6 @@
   };
   $: validateUrl(value);
 
-  const later = (delay: number = 1000) => {
-    return new Promise((resolve) => setTimeout(resolve, delay));
-  };
   const onClick = async () => {
     if (state === "idle") validateUrl(value, "force");
     if (state instanceof Error) return input.focus();
@@ -25,8 +29,7 @@
     } catch (error) {
       state = new Error("Error fetching");
     }
-    state = "idle";
-    value = "";
+    resetForm();
   };
 </script>
 
