@@ -56,4 +56,30 @@
   .bg-boost {
     @apply bg-[url('/images/bg-boost-mobile.svg')] sm:bg-[url('/images/bg-boost-desktop.svg')] bg-no-repeat bg-cover;
   }
+
+  /** Buttons **/
+
+  .btn {
+    @apply leading-none font-bold whitespace-nowrap px-8 py-4 disabled:cursor-not-allowed rounded-3xl;
+  }
+
+  .btn-sm {
+    @apply leading-none font-bold whitespace-nowrap px-6 py-3 disabled:cursor-not-allowed rounded-3xl;
+  }
+
+  .btn-lg {
+    @apply leading-none font-bold whitespace-nowrap px-8 py-4 disabled:cursor-not-allowed rounded-3xl text-lg;
+  }
+
+  .btn-primary {
+    @apply text-white bg-primary hover:enabled:brightness-110 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply text-white bg-secondary hover:enabled:brightness-110 transition-all duration-300;
+  }
+
+  .btn-text {
+    @apply text-neutral-200 hover:enabled:text-neutral-300 transition-colors duration-300;
+  }
 }

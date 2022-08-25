@@ -1,6 +1,5 @@
 <script lang="ts">
   import { menuItems } from "$lib/json";
-  import { Button, ButtonText } from "$lib/shared";
   import { auth } from "$lib/stores";
   import { loginWithGithub, logout } from "$lib/utils";
 
@@ -30,14 +29,14 @@
     {/each}
     {#if $auth.status === "SIGNED_IN"}
       <li class="ml-auto">
-        <ButtonText onClick={handleLogout} size="dense">Logout</ButtonText>
+        <button on:click={handleLogout} class="btn-sm btn-text">Logout</button>
       </li>
     {:else}
       <li class="ml-auto">
-        <ButtonText onClick={handleLogin} size="dense">Login</ButtonText>
+        <button on:click={handleLogin} class="btn-sm btn-text">Login</button>
       </li>
       <li>
-        <Button onClick={handleLogin} size="dense">Sign Up</Button>
+        <button on:click={handleLogin} class="btn-sm btn-primary">Sign Up</button>
       </li>
     {/if}
   </ul>

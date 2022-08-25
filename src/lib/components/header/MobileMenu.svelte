@@ -1,8 +1,7 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { menuItems } from "$lib/json";
-  import { trapFocus } from "$lib/utils";
-  import Button from "$lib/shared/Button.svelte";
+  import { trapFocus } from "$lib/actions";
 
   let open = false;
   const toggle = () => (open = !open);
@@ -50,15 +49,15 @@
     <ul class="flex flex-col gap-2 pb-6">
       {#each menuItems as { href, label } (label)}
         <li>
-          <Button onClick={() => onNavigate(href)} disabled={!open} type="secondary" class="w-full">
+          <button on:click={() => onNavigate(href)} disabled={!open} class="btn btn-secondary w-full">
             {label}
-          </Button>
+          </button>
         </li>
       {/each}
     </ul>
     <div class="flex flex-col gap-4 pt-6 pb-4">
-      <Button onClick={() => onNavigate("/")} disabled={!open} type="secondary">Login</Button>
-      <Button onClick={() => onNavigate("/")} disabled={!open}>Sign Up</Button>
+      <button on:click={() => onNavigate("/")} disabled={!open} class="btn btn-secondary">Login</button>
+      <button on:click={() => onNavigate("/")} disabled={!open} class="btn btn-primary">Sign Up</button>
     </div>
   </div>
 </nav>

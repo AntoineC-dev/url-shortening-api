@@ -1,7 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import HeroSVG from "$lib/assets/images/hero.svg";
-  import Button from "$lib/shared/Button.svelte";
 </script>
 
 <section class="section py-6 sm:py-16 md:py-20 lg:py-24">
@@ -14,7 +13,7 @@
       <p class="text-neutral-200 max-w-[40ch] xs:text-lg">
         Build your brand’s recognition and get detailed insights on how your links are performing.
       </p>
-      <Button onClick={() => goto("/")} class="text-lg">Get Started</Button>
+      <button on:click={() => goto("/")} class="btn-lg btn-primary">Get Started</button>
     </div>
   </div>
 </section>

@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { later } from "$lib/helpers";
-  import { Button } from "$lib/shared";
+  import { later } from "$lib/utils";
 
   let input: HTMLInputElement;
   let value = "";
@@ -49,7 +48,11 @@
       <span class="text-error text-xs">{state.message}</span>
     {/if}
   </div>
-  <Button {onClick} disabled={state instanceof Error || state === "submitting"} shape="square">
+  <button
+    on:click={onClick}
+    disabled={state instanceof Error || state === "submitting"}
+    class="btn btn-primary rounded-md"
+  >
     {state === "submitting" ? "Please wait..." : "Shorten It!"}
-  </Button>
+  </button>
 </div>
