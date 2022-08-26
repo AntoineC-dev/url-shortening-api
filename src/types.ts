@@ -1,3 +1,2 @@
-export interface Type {
-  property: string;
-}
+export const cookies = ["session", "refreshSession"] as const;
+export type Cookie = typeof cookies[number];

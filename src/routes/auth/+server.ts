@@ -1,6 +1,7 @@
 import { error, json, type RequestHandler } from "@sveltejs/kit";
 
 import { TWO_WEEKS_IN_SECONDS } from "$constants";
+import { createCookie, createExpiredCookie } from "$lib/utils";
 
 export const POST: RequestHandler = async ({ request, locals }) => {
   const authHeader = request.headers.get("Authorization") || "";
@@ -11,8 +12,8 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 
   const { refreshToken, expiresIn } = await request.json();
 
-  const sessionCookie = `session=${accessToken}; SameSite=Strict; Path=/; HttpOnly; Max-Age=${expiresIn}`;
-  const refreshCookie = `refreshSession=${refreshToken}; SameSite=Strict; Path=/; HttpOnly; Max-Age=${TWO_WEEKS_IN_SECONDS}`;
+  const sessionCookie = createCookie({ name: "session", cookie: accessToken, maxAge: expiresIn });
+  const refreshCookie = createCookie({ name: "refreshSession", cookie: refreshToken, maxAge: TWO_WEEKS_IN_SECONDS });
   const user = await locals.userRepo.findByAccessToken(accessToken);
 
   const headers = new Headers();
@@ -22,8 +23,8 @@ export const POST: RequestHandler = async ({ request, locals }) => {
   return json({ user }, { headers });
 };
 
-const expiredSessionCookie = "session=; SameSite=Strict; Path=/; HttpOnly; Max-Age=0;";
-const expiredRefreshCookie = "refreshSession=; SameSite=Strict; Path=/; HttpOnly; Max-Age=0;";
+const expiredSessionCookie = createExpiredCookie("session");
+const expiredRefreshCookie = createExpiredCookie("refreshSession");
 
 export const DELETE: RequestHandler = () => {
   const headers = new Headers();
