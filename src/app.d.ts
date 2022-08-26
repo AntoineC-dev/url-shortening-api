@@ -2,17 +2,28 @@
 // for information about these interfaces
 // and what to do when importing types
 declare namespace App {
-  // interface Locals {}
+  interface User {
+    id: string;
+  }
+
+  type UserStore = User | null;
+
+  interface UserRepoInterface {
+    findByAccessToken(accessToken: string): Promise<User | null>;
+    refreshSession(refreshToken: string): Promise<{
+      user: User | null;
+      sessionCookie: string;
+      refreshCookie: string;
+    }>;
+  }
+
+  interface Locals {
+    userRepo: UserRepoInterface;
+    user: User | null;
+  }
   // interface Platform {}
   // interface PrivateEnv {}
   // interface PublicEnv {}
-
-  import type { AuthChangeEvent, User } from "@supabase/supabase-js";
-
-  interface Auth {
-    user: User | null;
-    status: AuthChangeEvent;
-  }
 }
 
 declare module "$lib/assets/*.svg" {
