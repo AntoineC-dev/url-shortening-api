@@ -8,7 +8,6 @@ export const supabaseClient = createClient(supabaseUrl, supabaseAnonKey, {
   persistSession: false,
 });
 
-export const loginWithGithub = (redirectTo: string) =>
-  supabaseClient.auth.signIn({ provider: "github" }, { redirectTo });
+export const loginWithGithub = () => supabaseClient.auth.signIn({ provider: "github" });
 export const logout = () => supabaseClient.auth.signOut();
 export const getSupabaseUser = () => supabaseClient.auth.user();

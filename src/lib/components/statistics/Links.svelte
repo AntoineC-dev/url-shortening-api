@@ -30,7 +30,7 @@
   class="relative flex flex-col bg-secondary p-6 sm:p-8 md:px-10 lg:py-10 lg:px-12 gap-4 rounded-lg sm:flex-row shadow-sm bg-shorten"
 >
   {#if !$user}
-    <p class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 text-lg text-neutral-200">
+    <p class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 text-center text-neutral-200">
       Please
       <button
         type="button"
