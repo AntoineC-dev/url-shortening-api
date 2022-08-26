@@ -30,15 +30,15 @@
   class="relative flex flex-col bg-secondary p-6 sm:p-8 md:px-10 lg:py-10 lg:px-12 gap-4 rounded-lg sm:flex-row shadow-sm bg-shorten"
 >
   {#if !$user}
-    <p class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 text-center text-neutral-200">
+    <p class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 text-center text-neutral-200 whitespace-nowrap">
       Please
       <button
         type="button"
         on:click={loginUser}
-        class="underline text-neutral-400 hover:text-primary transition-colors duration-300"
+        class="underline text-neutral-200 hover:text-neutral-400 transition-colors duration-300"
       >
         login
-      </button> to start using the app
+      </button> to use the API
     </p>
   {/if}
   <div class="relative flex flex-col gap-1 sm:flex-1">
