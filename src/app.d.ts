@@ -5,7 +5,7 @@
 declare namespace App {
   import type { User, ApiError } from "@supabase/supabase-js";
   // User
-  type UserStore = User;
+  type UserStore = boolean;
   interface UserRepoInterface {
     loginWithGithub(): Promise<User | null>;
     getUser(): User | null;
