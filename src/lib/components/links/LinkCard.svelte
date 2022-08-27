@@ -1,11 +1,14 @@
 <script lang="ts">
   import { updateLink } from "$lib/stores";
+  import { copyToClipboard } from "$lib/utils";
   export let props: App.Link;
 
   let loading = false;
   const onUpdate = async () => {
+    await copyToClipboard(props.shorten_link);
+    if (props.copied) return;
     loading = true;
-    await updateLink(props.id, { copied: !props.copied });
+    await updateLink(props.id, { copied: true });
     loading = false;
   };
 </script>
