@@ -1,6 +1,6 @@
 import type { Cookie } from "$types";
 
-export const getCookieValue = (cookie: string | null, name: string): string | null =>
+export const getCookieValue = (cookie: string | null, name: Cookie): string | null =>
   cookie?.match("(^|;)\\s*" + name + "\\s*=\\s*([^;]+)")?.pop() || null;
 
 export const createCookie = (props: { name: Cookie; cookie: string; maxAge: string | number }) =>
