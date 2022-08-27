@@ -11,7 +11,6 @@ export class UserRepo implements App.UserRepoInterface {
   findByAccessToken = async (accessToken: string) => {
     this.#client.auth.setAuth(accessToken);
 
-    // const decodedUser = jwtDecode(accessToken) as {sub: string}
     const { user } = await this.#client.auth.api.getUser(accessToken);
 
     return user ? { id: user.id } : null;
