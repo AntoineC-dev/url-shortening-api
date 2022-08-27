@@ -1,18 +1,13 @@
-import { loginWithGithub } from "$lib/utils";
 import { writable } from "svelte/store";
+import { UserRepo } from "$lib/repos";
+import { supabaseClient } from "$lib/utils";
+import type { UserStore } from "$types";
 
-export const user = writable<App.UserStore>(null);
+const userRepo = new UserRepo();
 
-export const loginUser = () => loginWithGithub();
+export const user = writable<UserStore>(null);
 
-export const createSession = async (props: { accessToken: string; refreshToken: string; expiresIn: string }) => {
-  const headers = new Headers({ "Content-Type": "application/json", Authorization: `Bearer ${props.accessToken}` });
-  const body = JSON.stringify({ refreshToken: props.refreshToken, expiresIn: props.expiresIn });
-  const json = await (await fetch("/auth", { method: "POST", headers, body })).json();
-  if (json) user.set(json.user);
-};
+export const loginUser = () => userRepo.loginWithGithub();
+export const logoutUser = () => userRepo.logout();
 
-export const logoutUser = async () => {
-  await fetch("/auth", { method: "DELETE" });
-  user.set(null);
-};
+supabaseClient.auth.onAuthStateChange((_, session) => user.set(session?.user || null));

@@ -1,21 +1,15 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 // and what to do when importing types
+
 declare namespace App {
+  import type { User, ApiError } from "@supabase/supabase-js";
   // User
-  interface User {
-    id: string;
-  }
-
-  type UserStore = User | null;
-
+  type UserStore = User;
   interface UserRepoInterface {
-    findByAccessToken(accessToken: string): Promise<User | null>;
-    refreshSession(refreshToken: string): Promise<{
-      user: User | null;
-      sessionCookie: string;
-      refreshCookie: string;
-    }>;
+    loginWithGithub(): Promise<User | null>;
+    getUser(): User | null;
+    logout(): Promise<ApiError | null>;
   }
 
   // Links
@@ -44,12 +38,7 @@ declare namespace App {
     getShortenLink(url: string): Promise<Pick<Link, "link" | "shorten_link"> | { error: string }>;
   }
 
-  interface Locals {
-    userRepo: UserRepoInterface;
-    linksRepo: LinkRepoInterface;
-    apiRepo: ApiRepoInterface;
-    user: User | null;
-  }
+  // interface Locals {}
   // interface Platform {}
   // interface PrivateEnv {}
   // interface PublicEnv {}

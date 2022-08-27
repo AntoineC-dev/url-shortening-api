@@ -2,6 +2,7 @@
   import { goto } from "$app/navigation";
   import { menuItems } from "$lib/json";
   import { trapFocus } from "$lib/actions";
+  import { user, loginUser, logoutUser } from "$lib/stores";
 
   let open = false;
   const toggle = () => (open = !open);
@@ -56,8 +57,12 @@
       {/each}
     </ul>
     <div class="flex flex-col gap-4 pt-6 pb-4">
-      <button on:click={() => onNavigate("/")} disabled={!open} class="btn btn-secondary">Login</button>
-      <button on:click={() => onNavigate("/")} disabled={!open} class="btn btn-primary">Sign Up</button>
+      {#if $user}
+        <button on:click={logoutUser} disabled={!open} class="btn btn-secondary">Logout</button>
+      {:else}
+        <button on:click={loginUser} disabled={!open} class="btn btn-secondary">Login</button>
+        <button on:click={loginUser} disabled={!open} class="btn btn-primary">Sign Up</button>
+      {/if}
     </div>
   </div>
 </nav>

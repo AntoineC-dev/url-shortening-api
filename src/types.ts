@@ -1,2 +1,3 @@
-export const cookies = ["session", "refreshSession"] as const;
-export type Cookie = typeof cookies[number];
+import type { User as SupabaseUser } from "@supabase/supabase-js";
+
+export type UserStore = SupabaseUser | null;

@@ -1,24 +1,6 @@
 <script lang="ts">
   import { menuItems } from "$lib/json";
   import { user, loginUser, logoutUser } from "$lib/stores";
-
-  // const handleLogin = async () => {
-  //   try {
-  //     const { error } = await loginWithGithub();
-  //     if (error) alert(error.message);
-  //   } catch (error: any) {
-  //     alert(error.error_description || error.message);
-  //   }
-  // };
-
-  // const handleLogout = async () => {
-  //   try {
-  //     const { error } = await logout();
-  //     if (error) alert(error.message);
-  //   } catch (error: any) {
-  //     alert(error.error_description || error.message);
-  //   }
-  // };
 </script>
 
 <nav aria-label="Primary" class="hidden md:flex flex-1 justify-between ml-12">
