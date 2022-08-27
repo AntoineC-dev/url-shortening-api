@@ -1,9 +1,13 @@
 import type { Handle } from "@sveltejs/kit";
 import { getCookieValue, supabaseClient } from "$lib/utils";
-import { UserRepo } from "$lib/repos";
+import { ApiRepo, LinksRepo, UserRepo } from "$lib/repos";
 
 export const handle: Handle = async ({ event, resolve }) => {
   const cookie = event.request.headers.get("cookie");
+  const apiRepo = new ApiRepo();
+  event.locals.apiRepo = apiRepo;
+  const linksRepo = new LinksRepo(supabaseClient);
+  event.locals.linksRepo = linksRepo;
   const userRepo = new UserRepo(supabaseClient);
   event.locals.userRepo = userRepo;
   const session = getCookieValue(cookie, "session");

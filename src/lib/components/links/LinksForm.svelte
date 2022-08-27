@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { user, loginUser } from "$lib/stores";
-  import { later } from "$lib/utils";
+  import { user, loginUser, createLink } from "$lib/stores";
 
   let input: HTMLInputElement;
   let value = "";
@@ -14,12 +13,14 @@
       return input.focus();
     }
     state = "submitting";
-    try {
-      await later(1500);
-      alert(formLink);
-    } catch (error) {
-      state = new Error("Error fetching");
+    const headers = new Headers({ "Content-Type": "application/json" });
+    const body = JSON.stringify({ link: formLink });
+    const response = await (await fetch("/api", { method: "POST", headers, body })).json();
+    if (response.error) {
+      state = new Error(response.error);
+      return input.focus();
     }
+    await createLink(response);
     state = "initial";
     value = "";
   };

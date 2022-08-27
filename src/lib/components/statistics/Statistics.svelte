@@ -1,6 +1,6 @@
 <script lang="ts">
   import { statistics } from "$lib/json";
-  import Links from "./Links.svelte";
+  import Links from "../links/Links.svelte";
   import StatisticCard from "./StatisticCard.svelte";
 </script>
 

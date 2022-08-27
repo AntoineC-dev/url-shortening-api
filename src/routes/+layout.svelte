@@ -2,12 +2,13 @@
   import "../app.css";
   import { onMount } from "svelte";
   import type { LayoutServerData } from "./$types";
-  import { createSession, user } from "$lib/stores";
+  import { createSession, user, links } from "$lib/stores";
   import { Footer, Header } from "$lib/components";
   import { getValueFromHash } from "$lib/utils";
 
   export let data: LayoutServerData;
   $user = data.user;
+  $links = data.links;
 
   onMount(async () => {
     const accessToken = getValueFromHash(window.location.hash, "access_token");
